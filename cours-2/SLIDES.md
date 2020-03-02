@@ -136,13 +136,15 @@ div.innerText = "Bonjour le monde !";
 </html>
 ```
 
+Ready permet de dire d'exécuter le code uniquement quand tout le html est chargé.
+
 ---
 
 # jQuery
 
 ## Les sélecteurs
 
-jQuery possède son propre système de sélecteurs basé sur les selecteurs CSS comme `document.querySelector()` : il s'agit de `$(selecteur)`.
+jQuery possède son propre système de sélecteurs basé sur les selecteurs CSS comme `document.querySelectorAll()` : il s'agit de `$(selecteur)`.
 
 ```js
 $("article")  // Récupère l'ensemble des articles
@@ -162,10 +164,12 @@ Vous retrouverez sur le site de jQuery l'ensemble de ces sélecteurs. On recomma
 ```javascript
 // Changer la couleur de fond
 $("article").css("background-color", "red");
+// Récupérer la valeur de l'attribut background-color
+$("article").attr("background-color");
 // Cacher un élément
 $("article").hide();
 // Le faire réapparaître
-$("article").hide();
+$("article").show();
 // Changer un attribut
 $("article").attr("title", "Mon Titre");
 ```
@@ -183,6 +187,7 @@ Questions :
 
 - Une fonction fournie comme paramètre à un autre fonction
 - Généralement, structure de celle-ci préconisée par la documentation (nombre d'arguments, noms, etc.)
+- Un callback rappelle; c'est le fait de donner comme paramètre à une fonction une fonction qui sera appelée dans cette première fonction. Une fonction a a pour paramètre une fonction b; la fonction a appelle la fonction b dans son fonctionnement.
 
 
 ```js
@@ -198,20 +203,23 @@ def ma_fonction(x, mon_callback):
   return mon_callback(x)
 ```
 
+Exemple: en js, on va vouloir afficher quelque chose lors d'un clic sur un bouton: donc on aura fonction clic(bouton, fonction_callback_action_lors_clic).
+
 ---
 
 # Javascript
 
 ## Les fonctions anonymes
 
-- Une fonction anonyme est une fonction sans nom. 
+- Une fonction anonyme est une fonction sans nom, une fonction jetable. 
 - En javascript, cela signifie qu'on ne la stocke pas dans une variable 
-- Elles sont généralement utilisées pour les callbacks
+- Elles sont généralement utilisées pour les callbacks: la fonction anonyme se met à l'endroit du praamètre où l'on met la fonction callback. La fonction ananoyme se définit à l'endroit où elle est utilisée.
 
 
 ```js
 // Javascript
 ma_fonction(5, function(z) { return z*5; });
+// function(z) est une fonction anonyme avec le paramètre z utilisée en callback
 ```
 
 ```python
