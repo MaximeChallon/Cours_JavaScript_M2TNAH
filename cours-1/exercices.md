@@ -13,6 +13,9 @@ Ecrivez une condition pour savoir si le contenu de cette variable est supérieur
 
 ```js
 var monNombre = 15;
+if (monNombre > 10){
+    alert("votre nombre est plus grand que 10")
+}
 ```
 
 ## Exercice 2
@@ -21,6 +24,13 @@ Changez le code pour qu'il vérifie que `monNombre` est plus grand que 10, plus 
 
 ```js
 var monNombre = 15;
+if (monNombre > 10){
+    alert("votre nombre est plus grand que 10");
+} else if (monNombre === 10){
+    alert("Votre nombre est égal à 10");
+} else {
+    alert("Votre nombre est plus petit que 10");
+}
 ```
 
 ## Exercice 3
@@ -40,6 +50,12 @@ var texte = {
         "μαντεῖον, ὡς λόγος τις: ἐν δὲ τῷ τρίτῳ",
     ]
 };
+var output = "<article><header>" + texte["author"] + "</header><ul>";
+for (var line = 0; line < texte["text"].length; ++line){
+    output += "<line>" + texte["text"][line] + "</line>";
+}
+var output = output + "</ul><footer>" + texte["urn"] + "</footer></article>";
+alert(output);
 ```
 
 ## Exercice 4
@@ -54,3 +70,8 @@ Vous aurez besoin :
 - Trouver comment ajouter un élément a une liste
 
 Essayer avec les mots : Catiline, judge, Sulla
+
+```javascript
+
+```
+

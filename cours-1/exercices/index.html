@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mon exercice</title>
+		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript">
+		var trouverlemot = function(mot, un_texte){
+			var resultats = [];
+			for (var clef in un_texte["text"]){
+				var passage = un_texte["text"][clef];
+
+				// option 1: search accepte des regex  et renvoie la position
+				if (passage.search(mot) !== -1){
+					resultats.push(clef);
+					console.log(passage + " contient le mot " + mot);
+				}
+
+				/*
+				// option 2 : indexOf n'accepte que des chaînes de caractères et renvoie la position
+				if (passage.indexOf(mot) !== -1){
+					console.log(passage + " contient le mot " + mot)
+				}
+
+				// option 3: ne renvoie pas la position, juste un booléen
+				if (passage.includes(mot) === true){
+					console.log(passage + " contient le mot " + mot)
+				} */
+			}
+			return resultats;
+		};
+		alert(trouverlemot("Autronius", text).join(", "));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
