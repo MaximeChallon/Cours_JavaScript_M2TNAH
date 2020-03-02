@@ -29,12 +29,13 @@ La sélection d'élément du DOM en javascript utilise les mêmes sélecteurs qu
 
 - `document.getElementById('test-table')` sélectionnera `#test-table`
 - `document.getElementsByTagName("span")` sélectionnera les `span`
-- `document.getElementsByClassName("classes")` sélectionnera les `.classes`
+- document.getElementsByClassName("classes")` sélectionnera les `.classes`
 	- On peut faire des sélections encore plus fines :  `document.getElementsByClassName("classes secondeclasses")` sélectionnera `.classes.secondeclasses`
-
 - `.getElementById()` ne renvoie qu'un résultat contrairement au reste (car un ID doit être unique). On peut continuer à construire notre requête sur cet élément :
 	- `document.getElementById('main').getElementsByClassName('test')` sélectionnera les éléments `#main .test`
 - On peut aussi utiliser `document.querySelector('#foo > div.bar')` qui prend comme l'exemple l'indique un sélecteur CSS
+- getElementById etquerySelector renvoient un élement unique donc il a des propriétés CSS
+- getElementsById et querySelectorAll renvoient des listes d'éléments donc ils n'ont pas de propriétés CSS: faut donc faire une boucle pour appliquer quelque chose à ce qui est sélectionné
 
 ---
 
@@ -44,12 +45,12 @@ La sélection d'élément du DOM en javascript utilise les mêmes sélecteurs qu
 
 - On peut changer les CSS via `monElement.style.nomDePropriété = valeur;` 
 ```js
-var div = document.getElementById('#ma_div');
+var div = document.getElementById('ma_div');
 div.style.backgroundColor = "red";
 ```
 - On peut changer le contenu html via `innerHTML`
 ```js
-var div = document.getElementById('#ma_div');
+var div = document.getElementById('ma_div');
 div.innerHTML = `<a href="#">
 Ajouter un lien
 </a>`; // On utilise ` pour faire des chaînes multilignes;

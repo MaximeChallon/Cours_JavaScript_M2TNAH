@@ -13,6 +13,18 @@
    <script type="text/javascript">
    // Votre code ici
    'use strict';
+   /*
+   // du rouge à l'article 1
+   document.getElementById("article_1").style.fontWeight = 'bold'; */
+
+   document.querySelector("#article_2 > header.sub-info").innerText = "Un joli titre";
+   // ou document.querySelectorAll("#article_2 > header.sub-info")[0].innerText = "Un joli titre";
+
+   document.getElementById("article_2").style.margin = '150px';
+   
+   document.getElementsByTagName("html").html.innerHTML = `<article id="article_3">
+
+   </article>`;
    </script>
  </body>
 </html>
