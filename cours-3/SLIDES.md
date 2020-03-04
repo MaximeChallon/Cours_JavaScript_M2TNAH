@@ -12,7 +12,7 @@ https://github.com/ponteineptique/cours-javascript
 
 # Ajax
 
-- *Asynchronous Javascript And Xml*
+- *Asynchronous Javascript And Xml*: asynchrone car ne fait pas en même temps que le reste
 - Requête / Code asynchrone : code dont l'exécution n'est pas bloquante pour le reste de la page.
 
 ```Javascript
@@ -25,7 +25,7 @@ console.log(x);
 
 - Permet de récupérer des données une fois la page affichée
 - Contrairement à ce que son nom indique, permet de récupérer tout type de contenu.
-- Peut aussi être utiliser pour envoyer des données sans en récupérer en retour.
+- Peut aussi être utilisé pour envoyer des données sans en récupérer en retour.
 
 ---
 
@@ -35,7 +35,7 @@ console.log(x);
 
 ---
 
-# Ajax : les promesses
+# Ajax (3) : les promesses
 
 http://api.jquery.com/jQuery.ajax/
 
@@ -54,13 +54,15 @@ var jqxhr = $.ajax("http://google.fr")
 
 ![Promesses -center](./images/Promesses.png)
 
+Fonctions anonymes en callback car je n'ai pas encore reçu les données au moment où je demande de récupérer la page.
+
 ---
 
 # Ajax (4) : exercice en groupe
 
 ## Mise en place
 - - Aller dans le dossier `cours-javascript/cours-3/serveur`
-- Exécutez `python -m SimpleHTTPServer` qui ouvrira un serveur simple sur http://localhost:8000
+- Exécutez `python -m SimpleHTTPServer`  ou `python -m http.server`qui ouvrira un serveur simple sur http://localhost:8000
 	- Un fichier HTML = Une page
 	- Cela permet de travailler dans des conditions proches du web sans forcément avoir la lourdeur de création de vrai serveur
 	- **Important** : Nous utilisons cet outil afin de pouvoir faire des requêtes AJAX depuis de simples fichiers HTML. En effet, le mode ouverture classique (avec des adresses en `file:// `) ne permet pas l'exécution de requêtes AJAX pour des raisons de sécurité.
