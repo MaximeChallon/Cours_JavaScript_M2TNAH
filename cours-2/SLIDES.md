@@ -300,6 +300,8 @@ Dans cette fonction, on utilisera `$(this)` pour référer à l'élément couran
 
 On peut ajouter des nouveaux éléments HTML via `.append(objet)` et `.prepend()` (l'un en suffixe, l'autre en préfixe).
 
+L'avantage de cette méthode est que j'ai accès à une variable pour chaque élément, donc on peut faire cette variable.on(click) tout de suite après.
+
 Pour créer des éléments, on pourra utiliser `$()` avec une chaîne HTML à la place d'un sélécteur.
 
 ```js
@@ -339,3 +341,4 @@ https://jsfiddle.net/ponteineptique/6pu9omty/
 ## Générer des champs de formulaire à la demande
 
 - Exercice en groupe ou hors classe suivant l'avancée du cours
+- lors du clic sur un bouton d'ajout, ajout du morceau(un champ) html du formulaire
