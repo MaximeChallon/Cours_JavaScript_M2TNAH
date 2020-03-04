@@ -213,7 +213,7 @@ Exemple: en js, on va vouloir afficher quelque chose lors d'un clic sur un bouto
 
 - Une fonction anonyme est une fonction sans nom, une fonction jetable. 
 - En javascript, cela signifie qu'on ne la stocke pas dans une variable 
-- Elles sont généralement utilisées pour les callbacks: la fonction anonyme se met à l'endroit du praamètre où l'on met la fonction callback. La fonction ananoyme se définit à l'endroit où elle est utilisée.
+- Elles sont généralement utilisées pour les callbacks: la fonction anonyme se met à l'endroit du paramètre où l'on met la fonction callback. La fonction anoyme se définit à l'endroit où elle est utilisée.
 
 
 ```js
@@ -241,11 +241,11 @@ var ma_fonction = function(x, mon_callback) {
 }
 
 var q1 = ma_fonction(
-	7, ___
+	7, function(z){return "Blanche Neige et les " + z + " Nains"}
 ) === "Blanche Neige et les 7 Nains";
 
 var q2 = ma_fonction(
-	9, ___
+	9, function(z){return z*2;}
 ) === 18;
 
 console.log(q1);
