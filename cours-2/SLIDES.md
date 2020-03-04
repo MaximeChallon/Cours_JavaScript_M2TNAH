@@ -260,7 +260,7 @@ console.log(q2);
 
 En DOM et donc avec jQuery, les événements sont des actions portées par le document et l'interaction de l'utilisateur avec celui-ci. Par exemple, *"L'utilisateur a cliqué sur ce bouton"* ou *"Le document vient d'être chargé"*.
 
-Les événements propres à des éléments se propagent : si Bouton1 est dans Div1, les deux éléments partagent l'évènement "clique" quand Bouton1 est actionné.
+Les événements propres à des éléments se propagent car le DOM est un système d'arbre: si Bouton1 est dans Div1, les deux éléments partagent l'évènement "clique" quand Bouton1 est actionné.
 
 Au contraire, Div1 ne propagera pas l'évènement si le clic est fait en dehors de Bouton1 mais bien à l'intérieur de Div1.
 
@@ -275,18 +275,21 @@ Ces évènements sont à la source de toutes les intéractions en javascript: qu
 En jQuery, ces évènements ont liés aux éléments via `.on()` qui prend en premier les évènements sur lesquels réagir, et en deuxième une fonction *callback* qui prendra comme premier paramètre l'évènement :
 
 ```js
+// tous les éléments de classe btn, quand clic dessus, alors y a la fonction anonyme callback qui a le param event. Event du DOM ont une méthode preventDefault qui annule ce qui devrait arriver par défaut.
 $(".btn").on("click", function (event) {
   // On annule l'action par défaut du bouton
   event.preventDefault();
   // ...
 ```
 
-Dans cette fonction, on utilisera `$(this)` pour référer à l'élément courant qui porte l'évènement :
+Dans cette fonction, on utilisera `$(this)` pour référer à l'élément courant qui porte l'évènement: this est le self de Python, car on rajoute une méthode à nos éléments du DOM. Pour référer à l'élément sur lequel on est en cours d'action, on utilise l'équivalent de self, this :
 
 
 ```js
   $(this).addClass("btn-success");
 });
+// this de base est du VanillaJS, $this rajoute toutes les fonctionanlités de JQuery
+// ici on ajoute la classe btn-success à la balise du bouton
 ```
 
 ---
